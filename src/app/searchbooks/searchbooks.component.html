@@ -1,0 +1,36 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-lg-8 col-md-8">
+      <div class="search-card no-search-results text-center" *ngIf="!books.length">
+        <div>
+          <i class="fa fa-smile-o"></i>
+        </div>
+        <h4>No Search results found for your criteria! </h4>
+      </div>
+      <div class="search-card" *ngFor="let book of books">
+        <div class="img-sec">
+          <img src="{{ book.image_thumbnail }}" alt="{{ book.title }}">
+        </div> <!-- end of img-sec -->
+        <div class="search-desc">
+          <p class="search-title" title="{{ book.book_title }}">
+            <a style="color: #333333; font-weight: 400;" routerLink="/book_details/{{ book.book_url }}/{{ book.ISBN_13 }}">{{ book.book_title }}</a>
+          </p>
+          <p class="search-author">By <a href="" style="text-decoration: underline;">{{ book.book_authors }}</a></p>
+          <p class="book-desc">
+            Gluten-free quinoa selfies carles, kogi gentrify retro marfa viral. Aesthetic before they sold out put a bird on it sriracha typewriter. Skateboard viral irony tonx ...
+          </p>
+          <p>
+            Leasing Price: {{ book.lease_price }},
+            <b>Reading Price: {{ (( book['hcopy_price']/100) * appConstants['lease_rate']).toFixed(2) }}</b>
+            <span class="book-cost"> ({{ appConstants['lease_rate'] }}% of {{ book.hcopy_price }})</span>
+          </p>
+          <div>
+            <button (click)="requestCopy(book['_id'], 'hardcopy')" class="btn btn-primary btn-sm book-details-checkout">Request hard copy!</button>
+            <button (click)="requestCopy(book['_id'], 'ecopy')" class="btn btn-primary btn-sm req-ecopy">Request E-copy!</button>
+          </div>
+        </div> <!-- end of Search desc -->
+      </div> <!-- end of Search card -->
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+</div>

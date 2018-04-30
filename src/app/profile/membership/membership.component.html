@@ -1,0 +1,104 @@
+
+<div *ngIf="!membership">
+  <div class="row">
+    <div class="col-lg-6 col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form role="form" [formGroup]="pForm" (submit)="doPayment(appConstants.mAmount)">
+            <div class="form-group">
+              <label for="cardNumber">CARD NUMBER</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                       required formControlName="card_number" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-7 col-md-7">
+                <div class="form-group">
+                  <label for="expityMonth">EXPIRY DATE</label>
+                  <div class="col-xs-6 col-lg-6 pl-ziro">
+                    <input type="text" class="form-control" id="expityMonth" placeholder="MM"
+                           required maxlength="2" formControlName="mm" />
+                  </div>
+                  <div class="col-xs-6 col-lg-6 pl-ziro">
+                    <input type="text" class="form-control" id="expityYear" placeholder="YY"
+                           required maxlength="2" formControlName="yy" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-5 col-md-5 pull-right">
+                <div class="form-group">
+                  <label for="cvCode">CVV CODE</label>
+                  <input type="password" class="form-control" id="cvCode" placeholder="CVV"
+                         required maxlength="3" formControlName="cvv" />
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="name_on_card">Name on Card</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="name_on_card" placeholder="Name on Card"
+                       required formControlName="name_on_card" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
+              </div>
+            </div>
+            <ul class="nav nav-pills nav-stacked">
+              <li>
+                <a><span class="badge pull-right">Rs. {{ appConstants.mAmount }}</span> Final Payment</a>
+              </li>
+            </ul>
+            <br>
+            <button class="btn btn-primary btn-lg btn-block" role="button" type="submit">
+              Pay (Rs. {{ appConstants.mAmount }})
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div *ngIf="membership">
+  <h5><b>Membership Summary</b></h5>
+  <br>
+  <div class="row">
+    <div class="col-lg-8">
+      <table class='table table-bordered'>
+        <tr>
+          <td>Membership Id: </td>
+          <td><span class="blue-ink">{{ membership['_id'] }}</span></td>
+        </tr>
+        <tr>
+          <td>Membership Type: </td>
+          <td><span class="blue-ink">{{  membership['membership_type']}}</span></td>
+        </tr>
+        <tr>
+          <td>Status:</td>
+          <td><span class="blue-ink">{{(membership['status']) ? 'Active': 'In Active' }}</span></td>
+        </tr>
+        <tr>
+          <td>Account Balance:</td>
+          <td><span class="blue-ink">{{ membership['account_balance'] }}</span></td>
+        </tr>
+        <tr>
+          <td>Plan Balance:</td>
+          <td><span class="blue-ink"><b>Rs. {{ membership['plan_balance'] }}</b></span></td>
+        </tr>
+        <tr>
+          <td>Issue Pending:	</td>
+          <td><span class="blue-ink">{{ membership['issue_pending'] }}</span></td>
+        </tr>
+        <tr>
+          <td>Return Pending:</td>
+          <td><span class="blue-ink">{{ membership['return_pending'] }}</span></td>
+        </tr>
+        <tr>
+          <td>Return Ready:</td>
+          <td><span class="blue-ink">{{ membership['return_ready'] }}</span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

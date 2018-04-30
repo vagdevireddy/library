@@ -1,0 +1,68 @@
+<div class="container">
+  <br>
+  <h4>Register now!</h4><br>
+  <form [formGroup]="rForm" (submit)="register(rForm.value, rForm.valid)">
+    <div class="row">
+      <div class="col-lg-4">
+          <div class="form-group">
+            <label>Email<span class="star-red">*</span></label>
+            <input type="email" class="form-control" autocomplete="off" autofocus
+                   placeholder="Email" formControlName="email" [email] required />
+          </div>
+          <div class="form-group">
+            <div *ngIf="rForm.controls['email'].errors && !rForm.controls['email'].pristine"
+                 class="alert-danger alert">
+              <div [hidden]="!rForm.controls['email'].errors.required">Email is required.</div>
+              <div [hidden]="rForm.controls['email'].errors === null && rForm.controls['email'].value">Email is invalid. </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Mobile number <span class="star-red">*</span> </label>
+            <input type="text" formControlName="mobile_number" placeholder="Mobile number" class="form-control" required />
+          </div>
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" class="form-control" placeholder="First name" formControlName="first_name">
+          </div>
+        <div class="form-group">
+          <label>Last name</label>
+          <input type="text" class="form-control" placeholder="Last name" formControlName="last_name">
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="form-group">
+          <label for="">Password <span class="star-red">*</span></label>
+          <input type="password" class="form-control" placeholder="Password" formControlName="password" required>
+        </div>
+
+        <div class="form-group">
+          <label for="">Confirm password <span class="star-red">*</span></label>
+          <input type="password" class="form-control" placeholder="Confirm password" formControlName="c_password" required>
+        </div>
+        <div class="alert" [ngClass]="((rForm.controls['password']['dirty']
+              && rForm.controls['c_password']['dirty'])
+              && (rForm.controls['password'].value !== rForm.controls['c_password'].value)) ? 'alert-danger' : 'alert-success'"
+             *ngIf="(rForm.controls['password'].dirty && rForm.controls['c_password']['dirty'])">
+          Password {{ ((rForm.controls['password'].dirty && rForm.controls['c_password'].dirty)
+                  && (rForm.controls['password'].value !== rForm.controls['c_password'].value)) ? 'do not match!' : 'Matched!' }}
+        </div>
+
+        <div class="form-group">
+          <label>Gender</label>
+          <select class="form-control" name="gender" id="gender" formControlName="gender">
+            <option value="{{ item }}" *ngFor="let item of ['male', 'female']">{{ item }}</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="form-group">
+          <button class="btn btn-md btn-primary" [disabled]="!rForm.valid" type="submit">Submit</button> &nbsp;&nbsp;
+          <button type="reset" class="btn btn-md btn-default">Reset</button> &nbsp;&nbsp;&nbsp;
+          <a routerLink="/login-now">Already Registered?</a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

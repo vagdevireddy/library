@@ -1,0 +1,80 @@
+<div class="card-body shipping-address">
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="new-address" (click)="new_address.clicked = !new_address.clicked">
+        <h6 style="margin-bottom: 0; color: #2780E3; text-transform: uppercase; font-weight: 400;">
+          <i class="fa fa-plus"></i>&nbsp;
+          <a style="cursor: pointer;">Add New Address</a>
+        </h6>
+      </div> <!-- end new address -->
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+  <br>
+
+  <div class="panel panel-default" *ngIf="new_address.clicked">
+    <div class="panel-body">
+      <h5>Add new Address!</h5>
+      <form class="form-horizontal" [formGroup]="sForm" role="form" (submit)="submit(sForm.value, sForm.valid)">
+        <fieldset>
+          <div class="form-group">
+            <div class="col-lg-4">
+              <input type="text" class="form-control" placeholder="Name" formControlName="name">
+            </div>
+            <div class="col-lg-4">
+              <input type="text" class="form-control" placeholder="Phone Number" formControlName="phone_number">
+            </div>
+          </div>
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-8">
+              <textarea placeholder="Address" class="form-control input-md" formControlName="address"></textarea>
+            </div>
+          </div>
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-8">
+              <input type="text" placeholder="City" class="form-control input-md" formControlName="city">
+            </div>
+          </div>
+          <!-- Text input-->
+          <div class="form-group">
+            <div class="col-sm-4">
+              <input type="text" placeholder="State" class="form-control input-md" formControlName="state">
+            </div>
+            <div class="col-sm-4">
+              <input type="text" placeholder="Post Code" class="form-control input-md" formControlName="pin_code">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-lg-3 col-md-3">
+              <div>
+                <button type="submit" class="btn btn-primary" [disabled]="!sForm.valid">Save</button> &nbsp;&nbsp;
+                <button type="reset" class="btn btn-default">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <br>
+  <div class="row" *ngFor="let shipping_address of shipping_address">
+    <div class="col-lg-12">
+      <div class="address-area">
+        <div class="address-info">
+          <!--<span class="address-type">Home</span>-->
+          <div class="address-owner">
+            <p><b>{{ shipping_address.name }} &nbsp;&nbsp;{{ shipping_address.phone_number }}</b></p>
+            <p>{{ shipping_address.address }}</p>
+            <p>
+              <span>{{ shipping_address.city }}</span>&nbsp;
+              <span>{{ shipping_address.state }}</span>&nbsp;
+              <span>{{ shipping_address.pin_code }}</span>
+            </p>
+          </div>
+        </div>
+      </div> <!-- end new address -->
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+</div> <!-- end body -->

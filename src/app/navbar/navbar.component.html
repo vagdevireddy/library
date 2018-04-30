@@ -1,0 +1,93 @@
+<div id="flipkart-navbar">
+  <div class="container">
+    <div class="row row1">
+      <ul class="largenav top-nav-links">
+        <li class="upper-links" *ngIf="authService.isAuthenticated()">
+          <a class="links" routerLink="/profile/membership">Membership</a>
+        </li>
+        <li class="upper-links"><a class="links" routerLink="/categories">Categories</a></li>
+        <!--<li class="upper-links"><a class="links">Publications</a></li>
+        <li class="upper-links"><a class="links">Library</a></li>-->
+        <!--<li class="upper-links dropdown"><a class="links">Financials..</a>
+          <ul class="dropdown-menu">
+            <li class="profile-li"><a class="profile-links">My account transactions</a></li>
+            <li class="profile-li"><a class="profile-links">My receipts</a></li>
+            <li class="profile-li"><a class="profile-links">My account settings</a></li>
+            <li class="profile-li"><a class="profile-links">Change password</a></li>
+          </ul>
+        </li>-->
+        <li class="upper-links authentication-links" *ngIf="!authService.isAuthenticated()">
+          Welcome!
+          <a routerLink="/login-now">Login</a> or
+          <a routerLink="/register-now">Create an Account</a>
+        </li>
+        <li class="upper-links authentication-links" *ngIf="authService.isAuthenticated() && userInfo">
+          Logged in as <span>{{ userInfo['email'] }}</span>
+        </li>
+      </ul>
+    </div>
+    <div class="row row2">
+      <div class="col-sm-2">
+        <h2 class="nav-logo" style="margin:0; cursor: pointer;" routerLink="/">
+          <span class="smallnav menu" onclick="openNav()">☰ Brand</span>
+        </h2>
+        <h1 class="nav-logo" style="margin:0; cursor: pointer;" routerLink="/">
+          <span class="largenav">
+            Brand
+          </span>
+        </h1>
+      </div>
+      <div class="flipkart-navbar-search smallsearch col-sm-7 col-xs-12">
+        <div class="row">
+          <input (keydown)="searchBooks(searchForBook, '', '', $event)" [(ngModel)]="searchForBook" class="flipkart-navbar-input col-xs-11" id="search-typeahead"
+                  placeholder="Search for Books, Audios, Videos..." data-provide="typeahead" autocomplete="off">
+          <button (click)="searchBooks(searchForBook, '', '')" class="flipkart-navbar-button col-xs-1">
+            <svg width="15px" height="15px">
+              <path d="M11.618 9.897l4.224 4.212c.092.09.1.23.02.312l-1.464 1.46c-.08.08-.222.072-.314-.02L9.868 11.66M6.486 10.9c-2.42 0-4.38-1.955-4.38-4.367 0-2.413 1.96-4.37 4.38-4.37s4.38 1.957 4.38 4.37c0 2.412-1.96 4.368-4.38 4.368m0-10.834C2.904.066 0 2.96 0 6.533 0 10.105 2.904 13 6.486 13s6.487-2.895 6.487-6.467c0-3.572-2.905-6.467-6.487-6.467 "></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <ul class="nav navbar-nav" *ngIf="authService.isAuthenticated()">
+        <li>
+          <!--<a routerLink="/profile/settings" routerLinkActive="profile-active">
+            <i class="fa fa-user-circle-o"></i>&nbsp;
+            My profile/settings
+          </a>-->
+
+          <div class="dropdown">
+            <button class="dropbtn">
+              <i class="fa fa-user-circle-o"></i>&nbsp;
+              My Profile
+            </button>
+            <div class="dropdown-content">
+              <a routerLink="/profile/settings">Settings</a>
+              <a routerLink="/profile/my-orders">My Orders</a>
+              <a routerLink="/my-wallet">My Wallet</a>
+              <a class="pointer" (click)="logout()"><i class="fa fa-power-off"></i>&nbsp;Logout</a>
+            </div>
+          </div>
+        </li>
+        &nbsp;
+        <li routerLinkActive="none" class="pointer my-cart" *ngIf="authService.isAuthenticated()">
+          <a routerLink="/my-cart">
+            <i class="fa fa-cart-plus"></i>
+            &nbsp;Cart
+            <span #cart class="cart-legth" [ngClass]="{'blink-me': myCart.length}">{{ myCart.length }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="mySidenav" class="sidenav">
+  <div class="container" style="background-color: #2874f0; padding-top: 10px;">
+    <span class="sidenav-heading">Home</span>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  </div>
+  <a href="http://clashhacks.in/">Link</a>
+  <a href="http://clashhacks.in/">Link</a>
+  <a href="http://clashhacks.in/">Link</a>
+  <a href="http://clashhacks.in/">Link</a>
+</div>

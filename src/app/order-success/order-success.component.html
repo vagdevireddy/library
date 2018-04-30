@@ -1,0 +1,58 @@
+<div class="container">
+  <br>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-lg-4 col-md-4">
+          <h4>Order details</h4>
+          <table class="table">
+            <tr>
+              <td>Order Id</td>
+              <td>{{ myOrder['_id'] }}</td>
+            </tr>
+            <tr>
+              <td>Order date</td>
+              <td>{{ appService.dateFormat(myOrder['ordered_date']) }}</td>
+            </tr>
+            <tr>
+              <td>Total amount</td>
+              <td>{{ myOrder['total_amount'] }}</td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-lg-4 col-md-4" *ngIf="myOrder['shipping_address']">
+          <h4>Delivery address</h4>
+          <h5><b>{{ myOrder['shipping_address']['name'] }}</b></h5>
+          <p>Phone: {{ myOrder['shipping_address']['phone_number'] }}</p>
+          <p>{{ myOrder['shipping_address']['address']}}</p>
+          <p>
+            {{ myOrder['shipping_address']['city'] }},
+            {{ myOrder['shipping_address']['state'] }},
+            {{ myOrder['shipping_address']['pin_code'] }}</p>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <h4>Manage Order</h4>
+          <div>
+            <button class="btn btn-primary">
+              Request Invoice <i class="fa fa-question"></i>
+            </button>
+          </div>
+        </div>
+      </div> <!-- end row -->
+      <hr>
+      <div class="row" *ngIf="myOrder['book_id']">
+        <div class="col-lg-2">
+          <div class="thumbnail">
+            <img src="{{ myOrder['book_id']['image_thumbnail'] }}" alt="">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <h4>{{ myOrder['book_id']['book_title'] }}</h4>
+          <p>Authors: {{ myOrder['book_id']['book_authors'] }}</p>
+          <p>Publisher: {{ myOrder['book_id']['publisher'] }}</p>
+          <h2>Total Rs. {{ myOrder['total_amount'] }}/-</h2>
+        </div>
+      </div> <!-- end row-->
+    </div>
+  </div>
+</div>

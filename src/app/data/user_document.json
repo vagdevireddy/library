@@ -1,0 +1,44 @@
+{
+  "_id": "5a96758b9698a577f8676910",
+  "user_name": "PrestonSantiago",
+  "isActive": true,
+  "picture": "http://placehold.it/32x32",
+  "age": 26,
+  "first_name": "Moore",
+  "last_name": "Doyle",
+  "gender": "male",
+  "company": "EMERGENT",
+  "email": "mooredoyle@emergent.com",
+  "phone": "+1 (954) 517-3614",
+  "address": "498 Jamison Lane, Floris, Utah, 7118",
+  "about": "Amet duis duis reprehenderit exercitation mollit tempor qui officia anim laboris culpa est ipsum. Eiusmod occaecat ut reprehenderit sit labore elit deserunt adipisicing eu elit. Consequat incididunt dolore laboris veniam consectetur sint commodo culpa tempor irure nisi ut. Pariatur labore officia et et adipisicing et labore velit veniam eiusmod non. Exercitation labore enim anim ea id cillum cillum. Aute ullamco officia occaecat aute eiusmod do velit. Consequat dolore enim nostrud elit laborum laborum excepteur ipsum do ex ex reprehenderit.\r\n",
+  "friends": [
+    {
+      "id": 0,
+      "name": "Virgie Herrera",
+      "address": "593 Hausman Street, Monument, Rhode Island, 3902",
+      "city": "Perkins",
+      "state": "Knight",
+      "status": false,
+      "pin_code": 90269152
+    },
+    {
+      "id": 1,
+      "name": "Tiffany Mercado",
+      "address": "728 Girard Street, Cecilia, Mississippi, 1148",
+      "city": "Villarreal",
+      "state": "Lane",
+      "status": false,
+      "pin_code": 39965629
+    },
+    {
+      "id": 2,
+      "name": "Wiggins Dean",
+      "address": "503 Clay Street, Ticonderoga, Minnesota, 4591",
+      "city": "Becker",
+      "state": "Talley",
+      "status": false,
+      "pin_code": 71037054
+    }
+  ]
+}

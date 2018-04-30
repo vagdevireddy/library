@@ -1,0 +1,39 @@
+.order-id {
+  background-color: #FF4081;
+  border: 1px solid #FF4081;
+}
+.common-c {
+  border-radius: 0 2px 2px 0;
+  color: #FFFFFF;
+  padding: 7px 10px;
+  cursor: pointer;
+}
+.btn {
+  border-radius: 0 2px 2px 0;
+  padding: 7px 10px;
+}
+.panel-heading, .panel-footer {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.need-help {
+  background-color: #EEEEEE;
+  border: 1px solid #EEEEEE;
+  color: #000;
+}
+.need-help i {
+  color: #2874f0;
+}
+.panel-body .thumbnail {
+  height: 100px;
+  width: 100px;
+  border: 0 solid;
+}
+.panel-body .thumbnail img {
+  max-height: 100%;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}

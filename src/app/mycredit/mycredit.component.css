@@ -1,0 +1,18 @@
+.recharge-amount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.bg-light, .card-header {
+  background: #FFFFFF !important;
+}
+.recharge-amount button.btn {
+  width: 23%;
+}
+.please-note ul li {
+  font-size: 12px;
+}
+.please-note ul {
+  padding-left: 25px;
+}

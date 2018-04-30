@@ -1,0 +1,45 @@
+<h4>My Orders</h4>
+
+<div class="panel panel-default" *ngIf="!orders.length">
+  <div class="panel-body text-center">
+    <h5>You haven't ordered anything yet.</h5>
+    <a routerLink="/welcome" class="btn btn-default">
+      Purchase books&nbsp;
+      <i class="fa fa-arrow-right"></i>
+    </a>
+  </div>
+</div>
+
+<div class="panel panel-default" *ngFor="let item of orders">
+  <div class="panel-heading">
+    <span class="need-help common-c">
+      {{ item['_id'] }}
+    </span>
+    <span class="need-help common-c">
+      <i class="fa fa-question-circle"></i>&nbsp;
+      Need help?
+    </span>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="thumbnail">
+          <img src="{{ item['book_id']['image_thumbnail'] }}" alt="{{ item['book_id']['book_title'] }}">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6">
+        <h5>
+          <a routerLink="/book_details/{{ removeChars(item['book_id']['book_title']) }}/{{ item['book_id']['ISBN_13'] }}">
+            {{ item['book_id']['book_title'] }}
+          </a>
+        </h5>
+        <h6>{{ item['book_id']['book_authors'] }}</h6>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <span>Ordered on&nbsp;<strong>{{ appService.dateFormat(item['ordered_date']) }}</strong></span>
+    <span><b>Total Amount {{ item['total_amount'] }}</b></span>
+    <span>Delivered on <strong>{{ appService.dateFormat(item['delivery_date']) }}</strong></span>
+  </div>
+</div>

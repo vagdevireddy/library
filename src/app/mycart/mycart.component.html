@@ -1,0 +1,71 @@
+<div class="container">
+  <br>
+  <div class="row" *ngIf="books.length">
+    <div class="col-lg-8">
+      <div class="panel panel-default">
+        <div class="panel-title text-uppercase">
+          <h5><b>My cart ({{ books.length }})</b></h5>
+        </div>
+        <hr>
+        <div class="panel-body">
+          <div class="row book-items" *ngFor="let book of books">
+            <div class="col-lg-2">
+              <div class="thumbnail">
+                <img src="{{ book.image_thumbnail }}" alt="{{ book.book_title }}">
+              </div>
+            </div>
+            <div class="col-lg-7 col-md-7">
+              <h5><b>{{ book.book_title }}</b></h5>
+              <h6>{{ book.book_authors }}</h6>
+              <h6>Publisher: {{ book.publisher }}</h6>
+              <h4><b>₹ {{ book.book_price }}</b></h4>
+            </div>
+            <div class="col-lg-3 col-md-3">
+              <button class="btn btn-sm btn-default" (click)="removeFromCart(book._id)">Remove from Cart</button>
+              <h6>Requested for <b>{{ book['book_type'] }}</b></h6>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer text-right">
+          <a routerLink="/checkout" class="btn btn-md book-details-checkout btn-primary">Checkout Books</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-title">
+          <h5 class="text-uppercase"><b>Price details</b></h5>
+          <hr>
+        </div>
+        <div class="panel-body">
+          <h5>
+            Price ({{ books.length }} items)
+            <span class="pull-right"><b>₹ {{ totalPrice }}</b></span>
+          </h5>
+          <h5>
+            Delivery charges
+            <span class="pull-right"><b>₹ {{ appConstants.del_charges }}</b></span>
+          </h5>
+          <hr>
+          <h5>
+            Amount payable
+            <span class="pull-right"><b>₹ {{ totalPrice + appConstants.del_charges }}</b></span>
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="!books.length">
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body text-center no-books">
+          <div>
+            <i class="fa fa-smile-o"></i>
+          </div>
+          <h3>No items added to cart!</h3>
+          <a routerLink="/welcome">Continue shopping!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+<div class="container">
+  <br>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card border-default">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-lg-3">
+              <div class="img-thumbnail book-details-img">
+                <img src="{{ details.image_thumbnail }}" alt="{{ details.book_title }}">
+              </div> <!-- thumbnail -->
+              <br>
+            </div> <!-- end col -->
+            <div class="col-lg-7">
+              <p class="font-weight-bold book-title">
+                <b>{{ details.book_title }}</b>
+              </p>
+              <p>By <a routerLink="/search" [queryParams]="{q: '', author: details['book_authors'], category: ''}">{{ details['book_authors'] }}</a> &nbsp;(Author)</p>
+
+              <div class="lease-details">
+                <p class="book-cost">MRP  Rs. {{ details['hcopy_price'] }}  (Inclusive of all taxes)</p>
+                <h5 class="lease-details-h">
+                  <span class="lease-details-price">Rs. {{ (( details['hcopy_price']/100)*appConstants['lease_rate']).toFixed(2) }} </span>
+                  <span class="lease-calc">({{ appConstants['lease_rate'] }}% of {{ details['hcopy_price'] }}.00)</span>
+                </h5>
+              </div>
+
+              <div class="book-summary">
+                <p><b>Book Summary</b></p>
+                <p>
+                  Sed molestie semper ligula vitae pellentesque duis laoreet erat a pretium pulvinar, justo nisi fermentum risus, sed condimentum nisl elit vel risus.
+                  Vivamus felis dolor, consectetur vel condimentum sit amet, iaculis in orci.
+                </p>
+                <p><a href="">Read more..</a></p>
+                <p style="display: none;">
+                  Phasellus sed vehicula justo nunc quis erat vel ante ornare pulvinar cras tristique facilisis tincidunt quisque felis erat iaculis at fringilla vitae rutrum id magna. Nam pharetra scelerisque justo at vehicula aliquam erat
+                  volutpat. Quisque vulputate justo eu mattis interdum magna erat porta risus tincidunt
+                </p>
+                <br>
+                <div class="request-copy-area">
+                  <button [disabled]="!details.availability" (click)="requestCopy(details, 'hardcopy')"
+                          class="btn btn-primary btn-md book-details-checkout req-btn">
+                    Request hard copy!
+                  </button>
+                  <button [disabled]="!details.availability || !details.ecopy" (click)="requestCopy(details, 'ecopy')"
+                          class="btn btn-primary btn-md req-btn req-ecopy">
+                    Request E-copy!
+                  </button>
+                </div>
+                <p class="book-cost" style="margin: 10px 0;">
+                  Book is {{ (details.availability) ? 'Available': 'Not available' }},
+                  {{ (details.availability) ? 'Generally delivered by 2 days': '' }}
+                </p>
+              </div>
+
+            </div> <!-- end col -->
+          </div> <!-- end row -->
+        </div> <!-- end body -->
+      </div> <!-- end card -->
+    </div><!-- end col -->
+  </div> <!-- end row -->
+  <br />
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-12">
+      <!-- Book Details -->
+      <div class="row">
+        <div class="col-lg-12 book-summary">
+          <p><b>Book Details</b></p>
+          <p>Number of Pages: {{ details['no_of_pages'] }}</p>
+          <p>Publisher: {{ details.publisher }}</p>
+          <p>
+            Language: {{ details.language }}
+          </p>
+          <p>ISBN-10: {{ details['ISBN_10'] }}</p>
+          <p>ISBN-13: {{ details['ISBN_13'] }}</p>
+          <p>Product Dimensions: 12.8 x 2.3 x 19.8 cm</p>
+        </div> <!-- end col -->
+      </div> <!-- end row -->
+      <!-- end of Book Details -->
+
+      <hr />
+      <!-- Book Author -->
+      <div class="row">
+        <div class="col-lg-12 book-summary">
+          <p><b>About the Author</b></p>
+          <p>
+            {{ details['book_author_desc'] }}
+          </p>
+        </div> <!-- end col -->
+      </div> <!-- end row -->
+      <!-- end of Book Author -->
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+</div>
+<br>

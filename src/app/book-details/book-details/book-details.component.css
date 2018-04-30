@@ -1,0 +1,75 @@
+.card-header {
+  overflow: hidden;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 11px 11px 3px;
+}
+.book-title {
+  font-size: 15px;
+  text-transform: uppercase;
+  margin: 10px 0 3px;
+}
+.lease-details {
+  border: 3px solid #EEEEEE;
+  padding: 15px 10px;
+  margin-bottom: 15px;
+}
+.lease-details-h {
+  margin: 5px 0;
+}
+.lease-details-price {
+  color: #B12704 !important;
+  font-weight: 600;
+  font-size: 22px;
+}
+.lease-calc {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.book-summary p {
+  margin-bottom: 3px;
+}
+.request-copy-area {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+}
+.request-copy-area .req-btn {
+  min-width: 220px;
+  font-weight: 500;
+  height: 55px;
+  text-transform: uppercase;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.book-details-img {
+  border: 0;
+}
+.book-details-ul {
+  margin: 0;
+  list-style: none;
+}
+.book-details-ul li {
+  display: inline-block;
+  margin-left: 10px;
+}
+.book-details-ul li a {
+  color: #000;
+}
+.pink-heading {
+  color: #FF4081;
+  margin-bottom: 6px;
+}
+.browse-by ul {
+  list-style: none;
+  padding: 0;
+}
+.browse-by ul li {
+  padding: 3px 0;
+}
+.browse-by ul li a {
+  color: #000;
+}

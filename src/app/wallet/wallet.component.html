@@ -1,0 +1,102 @@
+<div class="container">
+  <br>
+  <!--<div class="panel panel-default">
+    <div class="panel-body">
+      <form ngNoForm action="{{ tra.PAYU_BASE_URL }}" method="GET" name="payuForm">
+        <input type="hidden" name="key" value="{{ tra.key }}" />
+        <input type="hidden" name="hash" value="am7eBpic|f23b118be0500854f90d|200|hello|surya|suryamuppalla@gmail.com|||||||||||KJ5oWHOUni"/>
+        <input type="hidden" name="txnid" value="f23b118be0500854f90d" />
+        <input type="hidden" name="furl" value="{{ tra.furl }}" size="64" />
+        <input type="hidden" name="service_provider" value="payu_paisa" size="64" />
+        <input type="hidden" name="surl" value="{{ tra.surl }}" size="64" />
+        <input type="hidden" name="productinfo" value="hello" />
+        <input type="hidden" name="firstname" id="firstname" value="surya" />
+        <input type="hidden" name="email" id="email" value="{{ userInfo['email'] }}" />
+        <input type="hidden" name="phone" value="8500011686" />
+        <table>
+          <tr>
+            <td><input name="amount" value="" /></td>
+          </tr>
+          <tr>
+            <td colspan="4"><input type="submit" value="Submit" /></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>-->
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row wallet-addition">
+        <div class="col-lg-3">
+          <div class="wallet-container">
+            <div class="wallet">
+              <i class="fa fa-shopping-bag"></i>&nbsp;
+            </div>
+            <div class="wallet-text">
+              <h4><b>Rs 300</b></h4>
+              <h5>Your wallet balance</h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Enter Amount...">
+              <span class="input-group-btn">
+                <button class="btn btn-primary submit" type="submit">Add money</button>
+              </span>
+            </div><!-- /input-group  -->
+          </form>
+        </div>
+      </div>
+      <hr>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <table class="table table-responsive">
+            <thead>
+              <tr>
+                <th>Merchant Name</th>
+                <th>Withdrawal</th>
+                <th>Deposit</th>
+                <th>Status</th>
+                <th>Comment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of [1, 2, 3, 4, 5, 6]">
+                <td class="money-transac">
+                  <div class="icon-sec">
+                    <i class="fa fa-rupee"></i>&nbsp;
+                    <i class="fa fa-plus"></i>
+                  </div>
+                  <div class="content-sec">
+                    <h6><b>Money added to Wallet</b></h6>
+                    <h6>From: HDFC</h6>
+                    <h6>Transaction ID: 3820480328480328</h6>
+                    <h6>2018-04-09 10:41:19 AM</h6>
+                  </div>
+                </td>
+                <td>-</td>
+                <td>
+                  <h6>Rs 2000</h6>
+                </td>
+                <td>
+                  <h6>
+                    SUCCESS
+                  </h6>
+                </td>
+                <td>
+                  <h6>
+                    Bank Txn ID: 135734401080990
+                  </h6>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

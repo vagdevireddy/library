@@ -1,0 +1,111 @@
+#footer {
+  padding-top: 60px;
+  background: #fff;
+  border-top: 1px dashed #ededed;
+}
+
+p {
+  margin: 0 0 1.75em;
+}
+#footer h5, #footer img.logo {
+  margin-bottom: 30px;
+}
+#footer strong {
+  color: #000;
+}
+.strong, b, strong {
+  color: #000;
+  font-weight: 500;
+}
+#footer a {
+  color: #000;
+}
+
+#footer .footerbottom {
+  margin-top: 50px;
+  padding: 25px 0;
+  border: 1px dashed #ededed;
+}
+ul.list-unstyled.categories li {
+  padding: 3px 0;
+}
+
+/* --------- Help Section ----- */
+.contact-form-page{
+  background: #FFFFFF;
+  border: 1px solid #ebeaea;
+  height: 380px;
+  width: 336px;
+  bottom: 1px;
+  right: 0;
+  position: fixed;
+  overflow-y: scroll;
+  border-radius: 0;
+  padding-bottom: 30px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+  color: #000;
+}
+.contact-form-page.show-profile{
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  transition: all 0.7s;
+}
+.header-btn a i {
+  color: #000;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  padding: 4px;
+  width: 25px;
+  height: 25px;
+}
+.form-head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 50px;
+  background: #FFF;
+  border-bottom: 1px solid #EEE;
+  cursor: pointer;
+}
+.get-help {
+  height: 40px;
+  width: 200px;
+  border: 1px solid #2780E3;
+  position: fixed;
+  bottom: 2px;
+  right: 5px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 99;
+  background: #1967be;
+}
+.get-help h6 b {
+  color: #FFFFFF;
+}
+input.form-control {
+  border-radius: 0;
+  outline: none;
+}
+textarea.form-control {
+  border-radius: 0;
+  resize: none;
+}
+.contact-form-page form{
+  padding: 0 10px;
+}
+.get-help.get-help-hide{
+  opacity: 0;
+  display: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+/* --------- End of Help Section -- */

@@ -1,0 +1,62 @@
+.wallet-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wallet i {
+  color: #FF4081;
+  font-size: 40px;
+}
+.wallet-addition {
+  display: flex;
+  align-items: center;
+}
+.wallet-text {
+  margin-left: 10px;
+}
+.submit, .submit:hover, .submit:active, .submit:focus {
+  background-color: #FF4081;
+  border: 1px solid #FF4081;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  height: 40px;
+  outline: none;
+}
+.money-transac .icon-sec {
+  border: 1px solid #DDD;
+  padding: 13px;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.money-transac .icon-sec i.fa-plus {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: #FFF;
+  padding: 3px;
+  color: #FF4081;
+  font-size: 11px;
+}
+.content-sec {
+  width: 80%;
+  float: left;
+}
+tbody h6 {
+  margin: 4px 0;
+  color: #5a5a5a;
+}
+.money-transac i.fa-rupee {
+  font-size: 25px;
+  color: #FF4081;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td,
+.table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+  padding: 15px 10px;
+}

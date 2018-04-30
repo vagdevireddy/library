@@ -1,0 +1,60 @@
+<div class="container">
+  <br> <br>
+  <div class="row">
+    <div class="col-lg-4 col-md-4">
+      <div class="card bg-light">
+        <div class="card-header">
+          <p style="margin-bottom: 0;" class="text-uppercase">
+            <b>
+              Available Credit
+              <span class="float-right pull-right">0.00</span>
+            </b>
+          </p>
+        </div><!-- end header -->
+        <div class="card-body">
+          <p>
+            Top-up your Wallet
+          </p>
+          <div class="recharge-amount">
+            <button class="btn btn-default btn-sm" *ngFor="let amount of rechargeAmounts">{{ amount }}</button>
+          </div>
+
+          <form>
+            <div class="form-group">
+              <label>Enter the amount to add</label>
+              <input type="number" class="form-control input-sm" name="recharge_amount" [(ngModel)]="rechargeAmount" />
+            </div>
+            <div class="form-group">
+              <button class="btn btn-sm btn-primary" type="submit">Add Money</button>
+            </div>
+          </form>
+        </div> <!-- end body -->
+      </div> <!-- end panel -->
+    </div> <!-- end col -->
+    <div class="col-lg-4 col-md-4">
+      <div class="card">
+        <div class="card-body please-note">
+          <p class="text-uppercase">Please note</p>
+          <ul>
+            <li>
+              Credit can't be cancelled or transferred to another account.
+            </li>
+            <li>
+              It can't be withdrawn in the form of cash or transferred to any bank account.
+            </li>
+            <li>
+              It can't be used to purchase Gift Cards or products from specific sellers.
+            </li>
+            <li>
+              Net-banking and credit/debit cards issued in India can be used for Myntra Credit top up.
+            </li>
+            <li>
+              Credits have an expiry. Check FAQs for more details.
+            </li>
+          </ul>
+        </div> <!-- end body -->
+      </div> <!-- end card -->
+    </div> <!-- end col -->
+  </div> <!-- end row -->
+</div> <!-- end container -->
+<br> <br> <br>

@@ -1,0 +1,28 @@
+.new-address {
+  border: 1px solid #dddddd;
+  padding: 15px;
+}
+.address-area {
+  border: solid 1px #e0e0e0;
+  margin-top: 10px;
+  border-radius: 2px 0;
+}
+.address-info {
+  max-width: 848px;
+  overflow: hidden;
+  padding: 20px;
+}
+.address-owner {
+  margin: 10px 0;
+}
+.address-type {
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #878787;
+  vertical-align: middle;
+  padding: 4px 7px;
+  border-radius: 2px;
+  background-color: #f0f0f0;
+  font-weight: 500;
+  margin-right: 15px;
+}

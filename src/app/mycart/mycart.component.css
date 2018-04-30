@@ -1,0 +1,31 @@
+.panel {
+  padding: 10px 15px 0 15px;
+}
+.book-items {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #dddddd;
+}
+.book-items:last-child {
+  border-bottom: 0 solid;
+}
+.book-items .thumbnail {
+  height: 100px;
+  width: 100px;
+  border: 0 solid;
+}
+.book-items .thumbnail img {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+.no-books {
+  padding: 40px 15px;
+}
+.no-books h3 {
+  margin-top: 0;
+}
+.no-books i.fa-smile-o {
+  font-size: 100px;
+  color: #FF4081;
+}
