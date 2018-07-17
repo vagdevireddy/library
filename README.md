@@ -17,3 +17,4 @@ In the cloned directory, run:
 **To learn how to add server-side rendering support to your application, [read this tutorial](https://medium.com/@kermani/angular-server-side-rendering-using-angular-cli-bbde0c0eefe9) on Medium**
 
 "# Known-project" 
+Read me file is updated
